@@ -3,25 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlde-l <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: carlde-l <carlde-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 06:26:42 by carlde-l          #+#    #+#             */
-/*   Updated: 2022/10/04 18:41:54 by carlde-l         ###   ########.fr       */
+/*   Created: 2023/02/09 06:44:11 by carlde-l          #+#    #+#             */
+/*   Updated: 2023/02/09 11:41:18 by carlde-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <unistd.h>
 
-char	*get_nest_line(int fd)
+int main()
 {
-	char	*str;
-
-	str = NULL;
-	while (*fd != '\n')
-	{
-		str = malloc(read(fd, 1, 
-		
-	return (str);
-
+    // Open by file or by path
+    int fd;
+    void    *buf;
+    static char    *str;
+    if (open("pepe", O_RDONLY) < 0)
+    {
+        perror();
+        return -1;
+    }
+    fd = open("pepe", O_RDONLY);
+    //read file
+    read(fd, buf, BUFFER_SIZE);
+    printf("\n%s", buf);
+    //static variable and character
+    str = ft_strchr(buf, '\n');
+    
 }
