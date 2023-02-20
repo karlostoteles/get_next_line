@@ -6,7 +6,7 @@
 /*   By: carlde-l <carlde-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 06:42:08 by carlde-l          #+#    #+#             */
-/*   Updated: 2023/02/09 10:11:53 by carlde-l         ###   ########.fr       */
+/*   Updated: 2023/02/15 13:39:39 by carlde-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,18 @@ int ft_strlen(char *str)
     int i;
     
     i = 0;
-    while (str[i])
+    while(str[i])
         i++;
     return i;
+}
+
+int ft_checkstatic(char *str)
+{
+    while(str)
+    {
+        if (*str == '\n')
+            return 1;
+        str++;
+    }
+    return 0;
 }
