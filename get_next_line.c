@@ -6,7 +6,7 @@
 /*   By: carlde-l <carlde-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 06:44:11 by carlde-l          #+#    #+#             */
-/*   Updated: 2023/02/18 14:05:30 by carlde-l         ###   ########.fr       */
+/*   Updated: 2023/02/22 14:46:41 by carlde-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,25 @@
 char    *get_next_line(int fd)
 {
     int i;
-    int len;
-    static char *str;
+    static char *buf[OPEN_MAX];
     char    *line;
-    void    *buf;
     
-    *str = '\0';
     while (ft_checkstatic(str) != 0)
     {
-        read("marcos.txt", buf, BUFFER_SIZE);
+        read(fd, buf, 5);
         ft_strjoin(str, buf);//modificar strjoin para coger tambien el primer caso
     }
     i = 0;
+    line = malloc(ft_find(str, '\n'));
     while (str)
     {
         line[i] = str[i];
         i++;
     }
     line[i] = '\n';
+    str = str + i;
     
-    return *line;
+    return (line);
     
 }
 
@@ -44,12 +43,9 @@ int main()
     int             fd;
     
     static char     *str;
-    int             len;
-
-    len = 0;
+    
     if (open("pepe", O_RDONLY) < 0)
     {
-        perror();
         return -1;
     }
     fd = open("pepe", O_RDONLY);
@@ -57,15 +53,4 @@ int main()
     printf("%s\n",get_next_line(fd));
     printf("%s\n",get_next_line(fd));
     //printf("%s\n",get_next_line(fd));
-
-
-    /*
-    //read file
-    read(fd, buf, BUFFER_SIZE);
-    printf("\n%s", buf);
-    
-    //static variable and character
-    if (ft_strchr(buf, '\n'))
-        str = ft_strchr(buf, '\n');
-    */
 }
