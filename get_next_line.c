@@ -6,7 +6,7 @@
 /*   By: carlde-l <carlde-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 06:44:11 by carlde-l          #+#    #+#             */
-/*   Updated: 2023/02/22 14:46:41 by carlde-l         ###   ########.fr       */
+/*   Updated: 2023/02/18 14:05:30 by carlde-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,35 @@
 
 char    *get_next_line(int fd)
 {
-    int i;
-    static char *buf[OPEN_MAX];
+    static char    *buf[BUFFER_SIZE];
     char    *line;
+    int i;
     
-    while (ft_checkstatic(str) != 0)
+    if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	    return (NULL);
+    *buf = '\0';
+    while (ft_checkstatic(buf) != 0)
     {
-        read(fd, buf, 5);
-        ft_strjoin(str, buf);//modificar strjoin para coger tambien el primer caso
+        read("pepe", buf, BUFFER_SIZE);
     }
     i = 0;
-    line = malloc(ft_find(str, '\n'));
-    while (str)
+    line = malloc(BUFFER_SIZE);
+    while (buf[i] != '\n')
     {
-        line[i] = str[i];
+        line[i] = buf[i];
         i++;
     }
+    buf = buf + i;
     line[i] = '\n';
-    str = str + i;
     
-    return (line);
-    
+    return (ft_free(line)); 
 }
 
 int main()
 {
     // Open by file or by path
     int             fd;
-    
-    static char     *str;
-    
+
     if (open("pepe", O_RDONLY) < 0)
     {
         return -1;
