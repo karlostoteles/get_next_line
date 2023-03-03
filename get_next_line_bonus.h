@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: carlde-l <carlde-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 06:43:58 by carlde-l          #+#    #+#             */
-/*   Updated: 2023/03/03 07:09:32 by carlde-l         ###   ########.fr       */
+/*   Updated: 2023/03/03 18:46:49 by carlde-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
-# ifndef BUFFER_SIZE
+#ifndef BUFFER_SIZE
 # define BUFFER_SIZE 1
 # endif
 
+#ifndef __FD_SETSIZE
 # define __FD_SETSIZE 1024
+# endif
 
 # include <limits.h>
 # include <stdlib.h>

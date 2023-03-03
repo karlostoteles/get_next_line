@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlosdelafiguera <carlosdelafiguera@st    +#+  +:+       +#+        */
+/*   By: carlde-l <carlde-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 06:42:08 by carlde-l          #+#    #+#             */
-/*   Updated: 2023/03/01 18:49:09 by carlosdelaf      ###   ########.fr       */
+/*   Updated: 2023/03/02 17:18:24 by carlde-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ char    *ft_free(char *str)
 
     line = str;
     free(str);
+    str = NULL;
     return(line);
 }
 
