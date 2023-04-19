@@ -3,16 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlde-l <carlde-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: carlosdelafiguera <carlosdelafiguera@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 06:42:08 by carlde-l          #+#    #+#             */
-/*   Updated: 2023/03/02 17:18:24 by carlde-l         ###   ########.fr       */
+/*   Updated: 2023/04/15 09:02:31 by carlosdelaf      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "get_next_line.h"
 
+char	*ft_check(const  char *str, char c)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == c)
+			return ((char *)(s + i));
+		i++;
+	}
+	return (NULL);
+}
 
 char    *ft_free(char *str)
 {
@@ -32,17 +45,6 @@ int ft_strlen(char *str)
     while(str[i])
         i++;
     return i;
-}
-
-int ft_checkstatic(char *str)
-{
-    while(str)
-    {
-        if (*str == '\n' && *(str + 1) != '\n')
-            return 1;
-        str++;
-    }
-    return 0;
 }
 
 char    *ft_strjoin(char *s1, char *s2)
@@ -74,14 +76,4 @@ char    *ft_strjoin(char *s1, char *s2)
     }
     str[i + j] = '\0';
     return (str);
-}
-
-int ft_find(char *str, char c)
-{
-    int i;
-
-    i = 0;
-    while (str[i] != '\n')
-        i++;
-    return (i);
 }
