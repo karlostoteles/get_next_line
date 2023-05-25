@@ -21,4 +21,4 @@
 # include <fcntl.h>
 # include <limits.h>
 
-size_t  ft_strlen(char *str);
+int  ft_strlen(char *str);
