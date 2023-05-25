@@ -6,7 +6,7 @@
 /*   By: carlosdelafiguera <carlosdelafiguera@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 19:34:04 by carlde-l          #+#    #+#             */
-/*   Updated: 2023/05/25 18:43:47 by carlosdelaf      ###   ########.fr       */
+/*   Updated: 2023/05/25 21:16:04 by carlosdelaf      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ char    *ft_read_and_stash(int fd, char *stash)
             return (NULL);
         }
         buf[bytes_read] = '\0';
-        ft_strjoin(stash[fd], buf);
+        ft_strjoin(&stash[fd], buf);
     }
     free(buf);
-    return (stash[fd]);
+    return (&stash[fd]);
 }
 
 char    *ft_line(char *stash)
@@ -74,7 +74,8 @@ char    *ft_line(char *stash)
         i++;
     }
     line[i] = '\0';
-    return (ft_free(line));
+    free(stash);
+    return (line);
 }
 
 char    *ft_clean(char *stash)

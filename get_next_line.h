@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlde-l <carlde-l@student.42.fr>          +#+  +:+       +#+        */
+/*   By: carlosdelafiguera <carlosdelafiguera@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 19:33:59 by carlde-l          #+#    #+#             */
-/*   Updated: 2023/05/12 17:00:14 by carlde-l         ###   ########.fr       */
+/*   Updated: 2023/05/25 21:16:50 by carlosdelaf      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,14 @@
 # include <fcntl.h>
 # include <limits.h>
 
-int  ft_strlen(char *str);
+char    *get_next_line(int fd);
+char    *ft_read_and_stash(int fd, char *stash);
+char    *ft_line(char *stash);
+char    *ft_clean(char *stash);
+
+char    *ft_strchr(char *stash, char c);
+char    *ft_strjoin(char *dest, char *src);
+
+int     ft_strlen(char *str);
+
+#endif

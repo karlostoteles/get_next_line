@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlde-l <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: carlosdelafiguera <carlosdelafiguera@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 16:58:52 by carlde-l          #+#    #+#             */
-/*   Updated: 2023/05/12 16:59:45 by carlde-l         ###   ########.fr       */
+/*   Updated: 2023/05/25 21:06:49 by carlosdelaf      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,15 @@ int main()
     int fd;
 
     fd = open("pepe.txt", O_RDONLY);
-    printf("%s\n", get_next_line(fd));
-    printf("%s\n", get_next_line(fd));
-    printf("%s\n", get_next_line(fd));
-    printf("%s\n", get_next_line(fd));
-    printf("%s\n",get_next_line(fd));
-    printf("%s\n",get_next_line(fd));
-    printf("%s\n",get_next_line(fd));
-    printf("%s\n",get_next_line(fd));
+    char *line;
+
+    while ((line = get_next_line(fd)) != NULL)
+    {
+        printf("%s\n", line);
+        free(line);
+    }
+
+    close(fd);
+    return 0;
 }
+
