@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlosdelafiguera <carlosdelafiguera@st    +#+  +:+       +#+        */
+/*   By: carlde-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 19:34:04 by carlde-l          #+#    #+#             */
-/*   Updated: 2023/05/31 19:30:43 by carlde-l         ###   ########.fr       */
+/*   Created: 2023/05/31 19:46:02 by carlde-l          #+#    #+#             */
+/*   Updated: 2023/05/31 19:46:06 by carlde-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*get_next_line(int fd)
 {
