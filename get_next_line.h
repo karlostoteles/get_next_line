@@ -6,14 +6,16 @@
 /*   By: carlosdelafiguera <carlosdelafiguera@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 19:33:59 by carlde-l          #+#    #+#             */
-/*   Updated: 2023/05/30 13:11:08 by carlosdelaf      ###   ########.fr       */
+/*   Updated: 2023/05/31 15:24:26 by carlde-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# define BUFFER_SIZE 42
+#ifndef BUFFER_SIZE 
+#  define BUFFER_SIZE 42
+#endif
 
 # include <stdio.h>
 # include <unistd.h>

@@ -6,14 +6,24 @@ int main()
 
     fd = open("pepe.txt", O_RDONLY);
     char *line;
-
+/*
     while ((line = get_next_line(fd)) != NULL)
     {
         printf("%s\n", line);
         free(line);
     }
-
-    close(fd);
+*/
+	printf("return:%s", get_next_line(fd));
+    printf("return:%s", get_next_line(fd));
+	printf("return:%s", get_next_line(fd));
+	printf("return:%s", get_next_line(fd));
+	printf("return:%s", get_next_line(fd));
+	printf("return:%s", get_next_line(fd));
+	printf("return:%s", get_next_line(fd));
+	printf("return:%s", get_next_line(fd));
+	line = get_next_line(fd);
+	printf("line:%s\n", line);
+	close(fd);
     return 0;
 }
 
