@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlosdelafiguera <carlosdelafiguera@st    +#+  +:+       +#+        */
+/*   By: carlde-l <carlde-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 19:34:04 by carlde-l          #+#    #+#             */
-/*   Updated: 2023/05/31 19:30:43 by carlde-l         ###   ########.fr       */
+/*   Updated: 2023/06/01 16:56:31 by carlde-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ char	*ft_read_and_stash(int fd, char *stash)
 		if (bytes_read == -1)
 		{
 			free(buf);
+			free(stash);
 			return (NULL);
 		}
 		buf[bytes_read] = '\0';
@@ -94,8 +95,13 @@ char	*ft_clean(char *stash)
 	if (!str)
 		return (free(stash), NULL);
 	j = 0;
-	while (stash[++i] && stash[i])
-		str[j++] = stash[i];
+	i++;
+	while (stash[i] && stash[i])
+	{
+		str[j] = stash[i];
+		i++;
+		j++;
+	}
 	str[j] = '\0';
 	free(stash);
 	stash = NULL;

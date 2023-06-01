@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlde-l <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: carlde-l <carlde-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 19:46:02 by carlde-l          #+#    #+#             */
-/*   Updated: 2023/05/31 19:46:06 by carlde-l         ###   ########.fr       */
+/*   Updated: 2023/06/01 16:55:20 by carlde-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ char	*ft_read_and_stash(int fd, char *stash)
 		if (bytes_read == -1)
 		{
 			free(buf);
+			free(stash);
 			return (NULL);
 		}
 		buf[bytes_read] = '\0';
