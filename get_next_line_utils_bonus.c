@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlde-l <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: carlde-l <carlde-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 19:46:16 by carlde-l          #+#    #+#             */
-/*   Updated: 2023/05/31 19:46:19 by carlde-l         ###   ########.fr       */
+/*   Updated: 2023/06/01 19:07:08 by carlde-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,10 @@ char	*ft_strjoin(char *dest, char *src)
 char	*ft_strchr(char *stash, char c)
 {
 	if (!stash)
+	{
+		free(stash);
 		return (NULL);
+	}
 	while (*stash)
 	{
 		if (*stash && *stash == c)

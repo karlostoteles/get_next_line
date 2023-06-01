@@ -6,7 +6,7 @@
 /*   By: carlde-l <carlde-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 19:46:02 by carlde-l          #+#    #+#             */
-/*   Updated: 2023/06/01 16:55:20 by carlde-l         ###   ########.fr       */
+/*   Updated: 2023/06/01 18:38:04 by carlde-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ char	*ft_line(char *stash)
 	i = 0;
 	while (stash[i] && stash[i] != '\n')
 		i++;
-	line = malloc(sizeof(char) * (i + 2));
+	line = malloc(sizeof(char) * (i + (stash[i] == '\n') + 1));
 	if (!line)
 		return (NULL);
 	i = 0;

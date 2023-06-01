@@ -6,7 +6,7 @@
 /*   By: carlde-l <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 19:31:09 by carlde-l          #+#    #+#             */
-/*   Updated: 2023/05/31 19:46:54 by carlde-l         ###   ########.fr       */
+/*   Updated: 2023/06/01 18:28:30 by carlde-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE 1
 # endif
 
 # include <stdio.h>
